@@ -1,0 +1,11 @@
+#Ignore everything...
+*
+
+#... except thise file
+!.gitignore
+!attendant.r
+!README.md
+!do_attendance_mac.sh
+!do_attendance_win.bat
+
+!*/
