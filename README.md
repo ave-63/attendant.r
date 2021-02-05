@@ -43,7 +43,7 @@ Here are some example report CSV names that will **not** work:
 - `2:20_att_12-9.csv` -- Don't use special characters like `:` in the class ID.
 - `MW 227_att_12-9.csv` -- Don't use spaces.
 
-Then, when you have some of these csv reports in your `INPUT_DIRECTORY`, double-click the file `do_attendance_win.bat` or `do_attendance_mac.sh` to run the program. The first time you run it, it will need to install some R packages which will take some time, but after that it should finish in a few seconds.
+Then, when you have some of these csv reports in your `INPUT_DIRECTORY`, double-click the file `do_attendance_win.bat` or `do_attendance_mac.sh` to run the program. The first time you run it, it will need to install some R packages which will take some time, but after that it should finish in a few seconds. If you are using MS Windows and got an error here, see **Windows permission error** below.
 
 *Voilà!* There is now a file, `attendance_220.csv`, in your `OUTPUT_DIRECTORY` that looks something like this:
 
@@ -53,7 +53,19 @@ Note: when students sign in with slightly different names, such as "Georg Cantor
 
 One more note: You probably shouldn't edit the output csv in any way other than what I described in the previous note. Weird things will happen.
 
-## When things go wrong
+## Windows permission error
+
+In Windows, you may get error messages saying you are unable to install packages because you don't have permission to write to `C:\Program Files\...`. If this happens to you, follow these steps:
+
+1. Open a command prompt, by pressing the start button and typing `cmd` [Enter].
+
+2. Type `R` [Enter] to start a session where you can type R commands interactively.
+
+3. In the R session, type `install.packages("dplyr")` [Enter]. You will get the same error message as before, but this time, it will ask if you would like to use a personal library instead? Type `yes` to the rest of the questions. This will download and install some R packages.
+
+4. Repeat step 3 with `install.packages("stringi")` [Enter]. At this point, you should
+
+## Other problems
 
 If you get an error, or some unexpected results, first double-check that your files are named correctly (File Name Rules, above). Also make sure you correctly set `INPUT_DIRECTORY` and `OUTPUT_DIRECTORY` in `attendant.r`.
 
