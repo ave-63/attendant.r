@@ -28,11 +28,11 @@ You can do this for multiple classes and multiple dates, and each class will get
 
 Start by downloading some csv reports from Canvas/Zoom. Click **Zoom** on the left, then the **Previous Meetings** button, and then **Report**:
 
-![screenshot of Zoom within Canvas](https://i.imgur.com/65ZLq5y.png)
+![screenshot of Zoom within Canvas](https://i.imgur.com/3nSTILc.png)
 
 Then click **Export as CSV File**:
 
-![screenshot of zoom report](https://i.imgur.com/Zn1el8Y.png)
+![screenshot of zoom report](https://i.imgur.com/IJZcHlO.png)
 
 Then, name the file `220_att_12-9.csv`. Instead of `220` you can use your own way of identifying this class, such as `MW`, `227`, or `MW227`, but this "class ID" should be the same for all reports you download for this class. The `_att_` is important and tells the program this is a report to input. The `12-9` means December 9, and you could also write it as `12-09`.
 
@@ -47,7 +47,7 @@ Then, when you have some of these csv reports in your `INPUT_DIRECTORY`, double-
 
 *Voilà!* There is now a file, `attendance_220.csv`, in your `OUTPUT_DIRECTORY` that looks something like this:
 
-![screenshot of output csv](https://i.imgur.com/reMBcyO.png)
+![screenshot of output csv](https://i.imgur.com/06LS4ib.png)
 
 Note: when students sign in with slightly different names, such as "Georg Cantor," "Georg," or "Cantor, Georg," it makes a row for each of them, which can be confusing. If you want, you can ask students to only use one account in the future, copy numbers from one row into the other, and delete the extra row. These edits will stick as long as they don't sign in with the name you deleted.
 
