@@ -62,9 +62,13 @@ A. Hold down Ctrl while right-clicking on the `do_attendance_win.bat` file. One 
 OR
 
 B. Follow these steps to create a personal library in your `C:\User\...` folder and install packages there:
+
     1. Open a command prompt, by pressing the start button and typing `cmd` [Enter].
+    
     2. Type `R` [Enter] to start a session where you can type R commands interactively.
+    
     3. In the R session, type `install.packages("dplyr")` [Enter]. You will get the same error message as before, but this time, it will ask if you would like to use a personal library instead? Type `yes` to the rest of the questions. This will download and install some R packages.
+    
     4. Repeat step 3 with `install.packages("stringi")` [Enter]. At this point, you should
 
 ## Other problems
