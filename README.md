@@ -12,7 +12,7 @@ You can do this for multiple classes and multiple dates, and each class will get
 
 1. Install R on your computer. Go to [https://cran.r-project.org/mirrors.html](https://cran.r-project.org/mirrors.html), choose a nearby mirror, choose `base`, and follow the instructions.
 
-2. Download the following list of files, either using github (tricky), or [from my dropbox](https://www.dropbox.com/sh/jl7t98jy3c28cnn/AABPrtCmk8ZkhCvtKsfBzr8Ga?dl=0):
+2. Download the following list of files, either using github (tricky), or [from my dropbox](https://www.dropbox.com/sh/51v1t5fhvgk0h8u/AABWwMBwk_S7Zg9RBO9OoPzga?dl=0):
 
 - `do_attendance_win.bat` (MS Windows) or `do_attendance_mac.sh` (Macintosh) -- This is a tiny executable script that you double-click on, and it runs `R` with the code in `ck_grader.r`. You can put it anywhere handy, like on your desktop, home directory, or wherever you keep your Statistics materials. 
 - `attendant.r` -- This is the main file. Put it in the same folder as `do_attendance_win.bat` or `do_attendance_mac.sh`. Do not just use the version shared with others in dropbox, because you'll need to customize some things for your computer (step 3 below).
