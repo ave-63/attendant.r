@@ -55,15 +55,17 @@ One more note: You probably shouldn't edit the output csv in any way other than 
 
 ## Windows permission error
 
-In Windows, you may get error messages saying you are unable to install packages because you don't have permission to write to `C:\Program Files\...`. If this happens to you, follow these steps:
+In Windows, you may get error messages saying you are unable to install packages because you don't have permission to write to `C:\Program Files\R-4.0.3\...`. If this happens to you, there are two options to get around it:
 
-1. Open a command prompt, by pressing the start button and typing `cmd` [Enter].
+A. Hold down Ctrl while right-clicking on the `do_attendance_win.bat` file. One of the options that comes up should be "Run as administrator". Click it, enter your password, and it will install the packages in the `C:\Program Files\R-4.0.3\...` folder.
 
-2. Type `R` [Enter] to start a session where you can type R commands interactively.
+OR
 
-3. In the R session, type `install.packages("dplyr")` [Enter]. You will get the same error message as before, but this time, it will ask if you would like to use a personal library instead? Type `yes` to the rest of the questions. This will download and install some R packages.
-
-4. Repeat step 3 with `install.packages("stringi")` [Enter]. At this point, you should
+B. Follow these steps to create a personal library in your `C:\User\...` folder and install packages there:
+    1. Open a command prompt, by pressing the start button and typing `cmd` [Enter].
+    2. Type `R` [Enter] to start a session where you can type R commands interactively.
+    3. In the R session, type `install.packages("dplyr")` [Enter]. You will get the same error message as before, but this time, it will ask if you would like to use a personal library instead? Type `yes` to the rest of the questions. This will download and install some R packages.
+    4. Repeat step 3 with `install.packages("stringi")` [Enter]. At this point, you should
 
 ## Other problems
 
