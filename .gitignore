@@ -5,7 +5,8 @@
 !.gitignore
 !attendant.r
 !README.md
-!do_attendance_mac.sh
+!do_attendance_mac.command
+!do_attendance_linux.sh
 !do_attendance_win.bat
 
 !*/

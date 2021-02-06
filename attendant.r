@@ -1,19 +1,7 @@
-## USER OPTIONS:
-
-## Path to folder containing all your downloaded csv files. You must edit this!
-## Windows format example:
-## INPUT_DIRECTORY <- "C:\\Users\\your-username\\Downloads\\"
-## Mac/Linux example:
-INPUT_DIRECTORY <- "/home/ben/Dropbox/Courses/227/r_stuff/attendant/"
-
-## Path to folder where you want your result csv files to go. You must edit this!
-## Windows format example:
-## OUTPUT_DIRECTORY <- "C:\\Users\\your-username\\Downloads\\"
-## Mac/Linux example:
-OUTPUT_DIRECTORY <- "/home/ben/Dropbox/Courses/227/r_stuff/attendant/"
-
-## The year (string)
-YEAR <- "2021"
+args <- commandArgs(trailingOnly = TRUE)
+INPUT_DIRECTORY <- args[1]
+OUTPUT_DIRECTORY <- args[2]
+YEAR <- args[3]
 
 if(!require("stringi", quietly = TRUE, character.only = TRUE)){
     install.packages("stringi", character.only = TRUE)
@@ -53,8 +41,7 @@ if(length(input_filenames) == 0){
 }
 for(i in 1:length(input_filenames)){
     if(is.na(input_matches[i,1])){
-        print("The following file will not be treated as input, as it does not match attendance input file syntax:", quote = FALSE)
-        print(input_filenames[[i]], quote = FALSE)
+        print(paste("The following file will not be treated as input, as it does not match attendance input file syntax:", input_filenames[[i]]), quote = FALSE)
     }
 }
 
@@ -79,6 +66,9 @@ for(i in 1:nrow(input_matches)){
 }
 inputs <- data.frame(file_name=file_name, course_id=course_id, md_date=md_date,
                      std_date=std_date, day_of_week=day_of_week, col_name=col_name)
+if(length(inputs) == 0){
+    stop(paste("Error: there are no attendance input csv files in INPUT_DIRECTORY:", INPUT_DIRECTORY))
+}
 
 ## If output files don't exist, create them
 duped = duplicated(inputs$course_id)
