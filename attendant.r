@@ -76,15 +76,17 @@ keepers <- rep(TRUE, nrow(inputs))
 for(i in 1:nrow(inputs)){
     if(!duped[i]){
         output_exists <- FALSE
-        for(j in 1:nrow(output_matches)){
-            if(!is.na(output_matches[j,2]) && inputs$course_id[i] == output_matches[j,2]){
-                output_exists <- TRUE
-                ## Remove rows from inputs that are already in output file w/ same page_range, dl_date
-                existing_days <- colnames(read.csv(paste0(OUTPUT_DIRECTORY, output_matches[j,1])))
-                for(k in 1:nrow(inputs)){
-                    if(inputs$course_id[k] == output_matches[j,2] &&
-                       inputs$col_name[k] %in% existing_days){
-                        keepers[k] <- FALSE
+        if(nrow(output_matches > 0)){
+            for(j in 1:nrow(output_matches)){
+                if(!is.na(output_matches[j,2]) && inputs$course_id[i] == output_matches[j,2]){
+                    output_exists <- TRUE
+                    ## Remove rows from inputs that are already in output file w/ same page_range, dl_date
+                    existing_days <- colnames(read.csv(paste0(OUTPUT_DIRECTORY, output_matches[j,1])))
+                    for(k in 1:nrow(inputs)){
+                        if(inputs$course_id[k] == output_matches[j,2] &&
+                           inputs$col_name[k] %in% existing_days){
+                            keepers[k] <- FALSE
+                        }
                     }
                 }
             }
