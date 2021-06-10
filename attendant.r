@@ -109,6 +109,7 @@ inputs <- inputs[keepers,] # keep a row iff keepers is TRUE
 if(nrow(inputs) > 0){
     for(i in 1:nrow(inputs)){
         idf <- read.csv(paste0(INPUT_DIRECTORY, inputs$file_name[i]))
+        names(idf)[names(idf) == "User.Name"] <- "Name"
         idf <- aggregate(Duration.Minutes. ~ Name, data = idf, FUN = sum)
         idf[inputs$col_name[i]] <- idf$Duration.Minutes.
         idf <- select(idf, Name, inputs$col_name[i])
