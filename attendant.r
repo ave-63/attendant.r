@@ -96,6 +96,7 @@ for(i in 1:nrow(inputs)){
             print(paste("creating output file", new_file_name), quote = FALSE)
             #file.create(new_file_name)
             df <- read.csv(paste0(INPUT_DIRECTORY, inputs$file_name[i]))
+            names(df)[names(df) == "User.Name"] <- "Name"
             ## df$Duration.Minutes. <- strtoi(df$Duration.Minutes.) ##unnecesary?
             df <- aggregate(Duration.Minutes. ~ Name, data = df, FUN = sum)
             new_df <- data.frame(Name = df$Name)
